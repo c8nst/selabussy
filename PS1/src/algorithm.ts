@@ -1,14 +1,15 @@
-/**
- * Problem Set 1: Flashcards - Algorithm Functions
- *
- * This file contains the implementations for the flashcard algorithm functions
- * as described in the problem set handout.
- *
- * Please DO NOT modify the signatures of the exported functions in this file,
- * or you risk failing the autograder.
- */
+// /**
+//  * Problem Set 1: Flashcards - Algorithm Functions
+//  *
+//  * This file contains the implementations for the flashcard algorithm functions
+//  * as described in the problem set handout.
+//  *
+//  * Please DO NOT modify the signatures of the exported functions in this file,
+//  * or you risk failing the autograder.
+//  */
 
-import { Flashcard, AnswerDifficulty, BucketMap } from "./flashcards";
+ import { Flashcard, AnswerDifficulty, BucketMap } from "./flashcards";
+ console.log(1)
 
 /**
  * Converts a Map representation of learning buckets into an Array-of-Set representation.
@@ -18,11 +19,7 @@ import { Flashcard, AnswerDifficulty, BucketMap } from "./flashcards";
  *          Buckets with no cards will have empty sets in the array.
  * @spec.requires buckets is a valid representation of flashcard buckets.
  */
-export function toBucketSets(buckets: BucketMap): Array<Set<Flashcard>> {
-  console.log('implement me line 22')
-  return [];
-  throw new Error("Implement me!");
-}
+
 
 /**
  * Finds the range of buckets that contain flashcards, as a rough measure of progress.
@@ -32,12 +29,12 @@ export function toBucketSets(buckets: BucketMap): Array<Set<Flashcard>> {
  *          or undefined if no buckets contain cards.
  * @spec.requires buckets is a valid Array-of-Set representation of flashcard buckets.
  */
-export function getBucketRange(
-  buckets: Array<Set<Flashcard>>
-): { minBucket: number; maxBucket: number } | undefined {
-  // TODO: Implement this function
-  throw new Error("Implement me!");
-}
+// export function getBucketRange(
+//   buckets: Array<Set<Flashcard>>
+// ): { minBucket: number; maxBucket: number } | undefined {
+//   let result = {1 : 1,2 : 1 }
+//   return result;
+// }
 
 /**
  * Selects cards to practice on a particular day.
@@ -99,3 +96,18 @@ export function computeProgress(buckets: any, history: any): any {
   // TODO: Implement this function (and define the spec!)
   throw new Error("Implement me!");
 }
+
+export function toBucketSets(buckets: BucketMap): Array<Set<Flashcard>> {
+  let result : Array<Set<Flashcard>> = []
+
+  buckets.forEach( (x,y) => result.push(x) )
+  
+  return result;
+}
+let bucketa : Flashcard ={ front: "a" , back: "b" , hint: "c" , tags: ["d"]} 
+let sets : Set<Flashcard> = new Set ; 
+sets.add(bucketa)
+let bucketMap: BucketMap = new Map<number, Set<Flashcard>>();
+bucketMap.set(1,sets)
+let result = toBucketSets(bucketMap)
+console.log(result)

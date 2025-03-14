@@ -91,14 +91,14 @@ console.log(1);
 //   throw new Error("Implement me!");
 // }
 function toBucketSets(buckets) {
-    let result = [];
-    buckets.forEach((x, y) => result.push(x));
+    var result = [];
+    buckets.forEach(function (x, y) { return result.push(x); });
     return result;
 }
-let bucketa = { front: "a", back: "b", hint: "c", tags: ["d"] };
-let sets = new Set;
+var bucketa = { front: "a", back: "b", hint: "c", tags: ["d"] };
+var sets = new Set;
 sets.add(bucketa);
-let bucketMap = new Map();
+var bucketMap = new Map();
 bucketMap.set(1, sets);
-let result = toBucketSets(bucketMap);
+var result = toBucketSets(bucketMap);
 console.log(result);
